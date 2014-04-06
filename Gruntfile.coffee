@@ -56,29 +56,20 @@ module.exports = (grunt) ->
 
 					]
 
-		# copy:
-		# 	dist:
-		# 		files: [
-
-		# 		]
-
-		# shell:
-		# 	flask:
-		# 		command: 'cd flask; python server.py'
-		# 		options:
-		# 			stdout: true
-		# 			stderr: true
-		# 			stdin: true
-		# 			async: true
-
-		# concurrent:
-		# 	dev:
-		# 		tasks: ['shell:flask', 'watch']
-		# 		options:
-		# 			logConcurrentOutput: true
+		less: {
+			development: {
+				options: {
+					paths: ["assets/style"]
+				},
+				files: {
+					"<%= paths.dest %>/assets/build/bootstrap.css": "<%= paths.dest %>/assets/style/bootstrap.less"
+			    }
+			},
+		}
 
 
 	grunt.loadNpmTasks("grunt-contrib-coffee")
+	grunt.loadNpmTasks("grunt-contrib-less")
 	grunt.loadNpmTasks("grunt-contrib-connect")
 	grunt.loadNpmTasks("grunt-contrib-watch")
 	grunt.loadNpmTasks("grunt-contrib-compass")
@@ -90,7 +81,8 @@ module.exports = (grunt) ->
 
 	grunt.registerTask "default", [
 		'coffee'
-		'compass'
+		'less'
+		# 'compass'
 		'connect'
 		'watch'
 	]
