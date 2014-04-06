@@ -4,7 +4,7 @@ module.exports = (grunt) ->
 
 		paths:
 			src: "src"
-			dest: "."
+			dest: "public"
 
 		pkg: grunt.file.readJSON("package.json")
 
@@ -29,7 +29,7 @@ module.exports = (grunt) ->
 					open: true
 					livereload: 7331
 					port: 1337
-					base: '<%= paths.dist %>'
+					base: '<%= paths.dest %>'
 
 
 		coffee:
