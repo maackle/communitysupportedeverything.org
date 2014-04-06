@@ -15,7 +15,7 @@ module.exports = (grunt) ->
 					# "<%= paths.templates %>/**/*"
 				]
 				options:
-					livereload: 5500
+					livereload: 7331
 			js:
 				files: ["<%= paths.src %>/scripts/{,**}/*.coffee"]
 				tasks: ["coffee"]
@@ -26,7 +26,8 @@ module.exports = (grunt) ->
 		connect:
 			server:
 				options:
-					livereload: 5500
+					open: true
+					livereload: 7331
 					port: 1337
 					base: '<%= paths.dist %>'
 
