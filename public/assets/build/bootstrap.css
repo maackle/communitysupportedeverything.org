@@ -86,6 +86,7 @@
   margin: 0px;
   padding-top: 10px;
   padding-bottom: 5px;
+  text-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
 }
 .page-welcome #welcome-messages ul,
 .page-welcome #welcome-messages li {
@@ -108,6 +109,9 @@
 }
 .page-welcome .centralized {
   z-index: 2;
+}
+.page-work {
+  background: url(../images/css/paper_bg.png);
 }
 /**   PAGE | WORK*/
 .portfolio-items {
@@ -297,7 +301,6 @@
   width: 100%;
   height: 100%;
   top: 0;
-  left: -100%;
   position: absolute;
   display: block;
   z-index: 4;
