@@ -115,7 +115,8 @@ $(document).ready(function(){
     *
     *   Initialize slider for welcome page H1 message.
     */
-   $('#welcome-messages ul').bxSlider({
+   /*
+$('#welcome-messages ul').bxSlider({
         mode: 'vertical',
         auto: true,
         minSlides: 1,
@@ -126,6 +127,7 @@ $(document).ready(function(){
         useCSS: false,
         pause: 10000
     });
+*/
     
     /**
     *   PAGE | WORK
