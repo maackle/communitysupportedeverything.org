@@ -110,6 +110,19 @@
 .page-welcome .centralized {
   z-index: 2;
 }
+.page-welcome div#image-rotator {
+  width: 1440px;
+  height: 700px;
+}
+.page-welcome div#image-rotator img {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
 .page-work {
   background: url(../images/css/paper_bg.png);
 }
