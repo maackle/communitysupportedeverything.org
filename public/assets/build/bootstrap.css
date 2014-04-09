@@ -16,7 +16,7 @@
   position: relative;
   overflow: hidden;
   text-align: center;
-  background: #292929 url(../images/pages/welcome/welcome.jpg) 50% 0 repeat fixed;
+  background: #292929 url(../images/pages/welcome/portland-willamette.jpg) 50% 0 repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -109,19 +109,6 @@
 }
 .page-welcome .centralized {
   z-index: 2;
-}
-.page-welcome div#image-rotator {
-  width: 1440px;
-  height: 700px;
-}
-.page-welcome div#image-rotator img {
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
 }
 .page-work {
   background: url(../images/css/paper_bg.png);
@@ -367,11 +354,7 @@
 */
 .page-twitter {
   position: relative;
-  background: url(../images/pages/twitter/tw_bck.jpg) 50% 0 no-repeat fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url(../images/pages/home/portland-river-pano.jpg) 50% 0 no-repeat fixed;
   padding-top: 90px;
   padding-bottom: 130px;
 }
