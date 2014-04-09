@@ -314,22 +314,40 @@
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  left: 0;
+  /*
+
+            .social-icons {
+                left: 50%;
+                margin-left: -85px;
+                margin-top: -15px;
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                width: 170px;
+                z-index: 6;
+                
+                a {
+                    padding: 4px;
+                }
+                i {
+                    display: inline-block;
+                }
+            }
+*/
 }
-.page-about .about-items .about-overlay .social-icons {
-  left: 50%;
-  margin-left: -85px;
-  margin-top: -15px;
+.page-about .about-items .about-overlay .profile-link {
+  color: white;
+  left: 0;
   position: absolute;
   text-align: center;
-  top: 50%;
-  width: 170px;
+  top: 42%;
+  font-weight: bold;
+  width: 180px;
   z-index: 6;
 }
-.page-about .about-items .about-overlay .social-icons a {
-  padding: 4px;
-}
-.page-about .about-items .about-overlay .social-icons i {
-  display: inline-block;
+.page-about .about-items .about-overlay .profile-link:hover {
+  text-decoration: none;
 }
 /*
 *   PAGE | TWITTER

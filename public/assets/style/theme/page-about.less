@@ -9,7 +9,6 @@
             display: inline-block;
             color: #fff;
             overflow: hidden;
-            
             &:hover .about-overlay {
                 .opacity(95);
                 left: 0;
@@ -26,7 +25,25 @@
             background-color: @blueGray;
             .opacity(0);
             .transition(all 0.5s ease-in-out);
+            left: 0;
             
+            .profile-link {
+              color: white;
+              left: 0;
+              position: absolute;
+              text-align: center;
+              top: 42%;
+              font-weight: bold;
+              width: 180px;
+              z-index: 6
+            }
+            
+            .profile-link:hover {
+              text-decoration: none;
+            }
+            
+            /*
+
             .social-icons {
                 left: 50%;
                 margin-left: -85px;
@@ -44,6 +61,7 @@
                     display: inline-block;
                 }
             }
+*/
         }
 
     }
