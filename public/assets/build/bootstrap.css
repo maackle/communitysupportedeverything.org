@@ -127,12 +127,12 @@
   width: 100%;
   height: 100%;
   top: 0;
-  left: -100%;
+  left: 0;
   position: absolute;
   display: block;
   z-index: 4;
-  background: url(../images/css/thumb_over.png) no-repeat scroll center 42% #4e808e;
-  background-size: auto 20%;
+  background: url(../images/css/thumb_over.png) no-repeat scroll center 42% #65adbb;
+  background-size: 30% 0;
   opacity: 0;
   filter: alpha(opacity=0);
   -webkit-transition: all 0.3s ease-in-out;
@@ -144,6 +144,7 @@
   opacity: 0.95;
   filter: alpha(opacity=95);
   left: 0;
+  background-size: 30% 20%;
 }
 .portfolio-items h4 {
   color: #ffffff;
@@ -354,7 +355,11 @@
 */
 .page-twitter {
   position: relative;
-  background: url(../images/pages/home/portland-river-pano.jpg) 50% 0 no-repeat fixed;
+  background: url(../images/pages/home/portland-occupy.jpg) 50% 0 no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   padding-top: 90px;
   padding-bottom: 130px;
 }
@@ -1213,6 +1218,14 @@ footer {
   bottom: 0px;
   display: none;
   z-index: 200;
+}
+footer#credits {
+  color: #CCC;
+  background-color: #222;
+  text-align: center;
+}
+ul.list-unstyled {
+  list-style: none;
 }
 /* Load bootstrap-2.3.2 code */
 .clearfix {
