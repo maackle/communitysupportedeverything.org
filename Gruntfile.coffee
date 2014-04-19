@@ -3,15 +3,15 @@ module.exports = (grunt) ->
 	grunt.initConfig
 
 		paths:
-			src: "src"
-			dest: "public"
+			src: "assets"
+			dest: "static"
 
 		pkg: grunt.file.readJSON("package.json")
 
 		watch:
 			livereload:
 				files: [
-					"<%= paths.dest %>/assets/{,**}/*.css"
+					"<%= paths.dest %>/{,**}/*.css"
 					# "<%= paths.templates %>/**/*"
 				]
 				options:
@@ -20,16 +20,8 @@ module.exports = (grunt) ->
 			#	files: ["<%= paths.src %>/scripts/{,**}/*.coffee"]
 			#	tasks: ["coffee"]
 			less:
-				files: ["<%= paths.dest %>/assets/style/{,**}/*.less"]
+				files: ["<%= paths.src %>/styles/{,**}/*.less"]
 				tasks: ["less"]
-
-		connect:
-			server:
-				options:
-					open: true
-					livereload: 7331
-					port: 1337
-					base: '<%= paths.dest %>'
 
 
 		coffee:
@@ -37,31 +29,18 @@ module.exports = (grunt) ->
 				options:
 					join: true
 				files: [
-					"<%= paths.dest %>/assets/build/main.js": [
+					"<%= paths.dest %>/build/main.js": [
 						"<%= paths.src %>/scripts/*.coffee"
 					]
 				]
 
 
-		compass:
-			dist:
-				options:
-					noLineComments: false
-					# debugInfo: true
-					# bundleExec: true
-					sassDir: '<%= paths.src %>/styles'
-					cssDir: '<%= paths.dest %>/assets/build'
-					environment: 'development'
-					require: [
-
-					]
-
 		less:
 			development: 
 				options: 
-					paths: ["<%= paths.dest %>/assets/style"]
+					paths: ["<%= paths.src %>/style"]
 				files: 
-					"<%= paths.dest %>/assets/build/bootstrap.css": "<%= paths.dest %>/assets/style/bootstrap.less"
+					"<%= paths.dest %>/build/bootstrap.css": "<%= paths.src %>/styles/bootstrap.less"
 
 
 	grunt.loadNpmTasks("grunt-contrib-coffee")
@@ -79,7 +58,7 @@ module.exports = (grunt) ->
 		'coffee'
 		'less'
 		# 'compass'
-		'connect'
+		# 'connect'
 		'watch'
 	]
 
