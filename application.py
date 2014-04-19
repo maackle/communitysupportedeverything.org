@@ -57,4 +57,4 @@ if __name__ == '__main__':
 	handler.setLevel(logging.WARNING)
 	app.logger.addHandler(handler)
 
-	app.run(debug=True, port=80)
+	app.run(debug=True, port=5005)
