@@ -1,5 +1,6 @@
 Flask==0.10.1
 Flask-Assets==0.9
+Flask-Cache==0.12
 Flask-Login==0.2.10
 Flask-Script==0.6.7
 Flask-WTF==0.9.5
@@ -9,6 +10,7 @@ PyYAML==3.10
 WTForms==1.0.5
 Werkzeug==0.9.4
 beautifulsoup4==4.3.2
+flask-mongoengine==0.7.0
 itsdangerous==0.23
 mongoengine==0.8.7
 pyjade==2.2.0
@@ -17,3 +19,4 @@ requests==2.2.1
 six==1.5.2
 textblob==0.8.4
 webassets==0.9
+wsgiref==0.1.2
