@@ -11,3 +11,8 @@ blueprint = Blueprint('frontend', __name__, template_folder='templates')
 def home():
 	return render_template('views/home.jade')
 
+
+@blueprint.route('/html')
+def home_html():
+	return render_template('views/home.html')
+
