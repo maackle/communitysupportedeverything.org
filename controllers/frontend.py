@@ -16,3 +16,5 @@ def home():
 def home_html():
 	return render_template('views/home.html')
 
+# @blueprint.route('/update-photo', methods='POST'):
+

@@ -8,8 +8,9 @@ import requests
 import mongoengine
 from flask.ext.mongoengine import MongoEngine
 
-# from controllers.auth import login_manager, blueprint as auth
+from controllers.auth import login_manager, blueprint as auth
 from controllers.frontend import blueprint as frontend
+from controllers.admin import blueprint as admin
 from cache import cache
 
 
@@ -19,8 +20,9 @@ app = Flask(__name__)
 
 app.config.from_object('config.settings')
 app.jinja_env.add_extension('pyjade.ext.jinja.PyJadeExtension')
-# app.register_blueprint(auth, url_prefix='/auth')
 app.register_blueprint(frontend, url_prefix='')
+app.register_blueprint(auth, url_prefix='/auth')
+app.register_blueprint(admin, url_prefix='/admin')
 
 assets = Environment(app)
 assets.url = app.static_url_path
@@ -35,7 +37,7 @@ cache.init_app(app, config={
 # mongoengine.connect('superglot')
 db = MongoEngine(app)
 
-# login_manager.init_app(app)
+login_manager.init_app(app)
 
 @app.route('/')
 def home():
