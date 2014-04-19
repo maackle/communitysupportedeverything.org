@@ -18,9 +18,7 @@ html
 					p
 						a(href=url_for('home')) home
 						if current_user.is_authenticated()
-							a(href=url_for('frontend.document_list')) list documents
-							a(href=url_for('frontend.document_create')) add document
-							a(href=url_for('frontend.word_list')) list words
+							a(href="#") profile
 				hr
 
 			block messages
