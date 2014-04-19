@@ -1,0 +1,233 @@
+extends 'layout/main.jade'
+
+block main_content
+  include views/frontend/pages/welcome.jade
+  include views/frontend/pages/work.jade
+  include views/frontend/pages/features.jade
+
+  #page-about.pages.page-about
+    .container
+      header
+        h4.line-divider About
+        h1 Who We Are
+        .row
+          .span8.offset2
+            p
+              | We are in our pilot year, and we currently have 5 residents, all working on a different community project of their own design.
+      article
+        .thumbnails.about-items(style='margin-left: 2em;')
+          ul.thumbnails.about-items
+            li.span2.center
+              .item
+                img.img-circle(src='assets/images/residents/henry.jpg', alt='Henry Polacek')
+                .about-overlay.img-circle
+                  a.profile-link(href='pages/profile/dude.html') View Profile
+              h5
+                | Henry
+                br
+                | Polacek
+                br
+              p.smallFontBy08
+                | Henry is exporing how community is created through events, specifically workshops and skill shares. This Spring he'll be organizing a series of garden and permaculture workshops.
+              p
+                a.profile-link(href='pages/profile/dude.html') Read more...
+            li.span2.center
+              .item
+                img.img-circle(src='assets/images/residents/lydia.jpg', alt='Lydia Grijalva')
+                .about-overlay.img-circle
+                  a.profile-link(href='pages/profile/dude.html') View Profile
+              h5
+                | Lydia
+                br
+                | Grijalva
+                br
+              p.smallFontBy08
+                | Lydia is writing, editing, and publishing resource zine dealing with the issue of food security in Portland, in all it's forms.
+              p
+                a.profile-link(href='pages/profile/dude.html') Read more...
+            li.span2.center
+              .item
+                img.img-circle(src='assets/images/residents/cameron.jpg', alt='Cameron Frank')
+                .about-overlay.img-circle
+                  a.profile-link(href='pages/profile/dude.html') View Profile
+              h5
+                | Cameron Frank
+                br
+              p.smallFontBy08 Cameron has spent the year building the Student Union at PSU.
+              p
+                a.profile-link(href='pages/profile/dude.html') Read more...
+            li.span2.center
+              .item
+                img.img-circle(src='assets/images/residents/joseph.jpg', alt='Joseph Drushal')
+                .about-overlay.img-circle
+                  a.profile-link(href='pages/profile/dude.html') View Profile
+              h5
+                | Joseph Drushal
+                br
+              p.smallFontBy08
+                | Joseph is designing a gratitude based currency to facilitate the exchange of local resources, time, and skills without money.
+              p
+                a.profile-link(href='pages/profile/dude.html') Read more...
+            li.span2.center
+              .item
+                img.img-circle(src='assets/images/residents/michael.jpg', alt='Mikele Schnitman')
+                .about-overlay.img-circle
+                  a.profile-link(href='pages/profile/dude.html') View Profile
+              h5
+                | Mikele Schnitman
+                br
+              p.smallFontBy08 Mikele is working on data visualization and storytelling.
+              p
+                a.profile-link(href='pages/profile/dude.html') Read more...
+  #page-twitter.pages.white.paralax.page-twitter
+    .container
+      .row-fluid
+        .span8.offset2
+  #page-blog.pages.page-blog
+    .container
+      header
+        h4.line-divider Updates
+        h1 Most Recent Project Updates
+        .row
+          .span8.offset2
+            .input-append
+              input#appendedInputButton.span5(type='text', placeholder='Search Blog')
+              button.btn.btn-primary.sicon-search.sicon-white(type='button')
+                i Search
+        nav.submenu
+          ul
+            li
+              a(href='./pages/blog/blog.html') All
+            li
+              a(href='./pages/blog/blog.html') Technology
+            li
+              a(href='./pages/blog/blog.html') Design
+            li
+              a(href='./pages/blog/blog.html') Future trends
+            li
+              a(href='./pages/blog/blog.html') Photography
+            li
+              a(href='./pages/blog/blog.html') Other
+      article
+        ul.thumbnails
+          li.span4
+            a(href='./pages/blog/blog_1.html')
+              img(src='http://placehold.it/390x300', alt='Treble')
+            h5
+              | Blog Post Title
+              br
+              small April 10, 2013
+            p.smallFontBy08
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.
+            .read-more
+              a(href='./pages/blog/blog_1.html') Read More...
+          li.span4
+            a(href='./pages/blog/blog_2.html')
+              img(src='http://placehold.it/390x300', alt='Treble')
+            h5
+              | Blog Post Title
+              br
+              small April 10, 2013
+            p.smallFontBy08
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.
+            .read-more
+              a(href='./pages/blog/blog_2.html') Read More...
+          li.span4
+            a(href='./pages/blog/blog_3.html')
+              img(src='http://placehold.it/390x300', alt='Treble')
+            h5
+              | Blog Post Title
+              br
+              small April 10, 2013
+            p.smallFontBy08
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.
+            .read-more
+              a(href='./pages/blog/blog_3.html') Read More...
+          li.span4
+            a(href='./pages/blog/blog_4.html')
+              img(src='http://placehold.it/390x300', alt='Treble')
+            h5
+              | Blog Post Title
+              br
+              small April 10, 2013
+            p.smallFontBy08
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.
+            .read-more
+              a(href='./pages/blog/blog_4.html') Read More...
+          li.span4
+            a(href='./pages/blog/blog_5.html')
+              img(src='http://placehold.it/390x300', alt='Treble')
+            h5
+              | Blog Post Title
+              br
+              small April 10, 2013
+            p.smallFontBy08
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.
+            .read-more
+              a(href='./pages/blog/blog_5.html') Read More...
+          li.span4
+            a(href='./pages/blog/blog_6.html')
+              img(src='http://placehold.it/390x300', alt='Treble')
+            h5
+              | Blog Post Title
+              br
+              small April 10, 2013
+            p.smallFontBy08
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.
+            .read-more
+              a(href='./pages/blog/blog_6.html') Read More...
+      footer
+        .show-more-cube
+          a(href='./pages/blog/blog.html')
+            span
+              | All Blog
+              br
+              | Posts
+  #page-contact.pages.black-bg.white.page-contact
+    .container
+      header
+        h4.line-divider Contact
+        h1 Get Involved
+        .row
+          .span8.offset2
+            p
+              | We like to create things with fun, open-minded people. Feel free to say hello! We'll respond as soon as possible.
+      article
+        .row-fluid
+          .span6
+            h5 What do you want to create?
+            form
+              input.span12(type='text', placeholder='Title', required='required')
+              input.span12(type='email', placeholder='Email', required='required')
+              textarea.span12(rows='10', required='required')
+              button.btn.btn-primary(type='submit') Submit
+          .span5.offset1
+            h5 Get in touch
+            .media
+              .social-icons.sicon-white.pull-left
+                a.sicon-phone(href='#')
+                  i Phone
+              .media-body.smallFontBy08
+                | (+1) 800 000-0000
+            .media
+              .social-icons.sicon-white.pull-left
+                a.sicon-place(href='#')
+                  i Location
+              .media-body.smallFontBy08
+                | 1626 NE Alberta St., Portland, OR
+            .media
+              .social-icons.sicon-white.pull-left
+                a.sicon-mail(href='#')
+                  i email
+              .media-body.smallFontBy08
+                | info@communitysupportedeverything.org
+                br
+            br
+            br
+            br
+            h5 Find us elsewhere
+            .social-icons.sicon-white.bordered
+              a.sicon-facebook(href='#')
+                i Facebook
+    #map-image
+      img(src='assets/images/pages/contact/map_bck.jpg', alt='Treble')
