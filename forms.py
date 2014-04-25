@@ -9,3 +9,4 @@ required = InputRequired("This field is required")
 
 LoginForm = model_form(User, Form, only=('email', 'password',))
 RegisterForm = model_form(User, Form, only=('email', 'password',))
+UserProfileForm = model_form(User, Form)

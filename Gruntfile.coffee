@@ -40,7 +40,8 @@ module.exports = (grunt) ->
 				options: 
 					paths: ["<%= paths.src %>/style"]
 				files: 
-					"<%= paths.dest %>/build/bootstrap.css": "<%= paths.src %>/styles/bootstrap.less"
+					# "<%= paths.dest %>/build/bootstrap.css": "<%= paths.src %>/styles/bootstrap.less"
+					"<%= paths.dest %>/build/main.css": "<%= paths.src %>/styles/main.less"
 
 
 	grunt.loadNpmTasks("grunt-contrib-coffee")

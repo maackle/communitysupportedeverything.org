@@ -3,7 +3,7 @@
  *  Load Ajax pages and elements using anchor/hash params.
  *  
  *   Params:
- *       Exmple: <a href="#pages/portfolio/readmore.html" data-destination="plugin-filter-elements" data-insert="appendTo" data-action="remove">
+ *       Exmple: <a href="#/static/theme-pages/portfolio/readmore.html" data-destination="plugin-filter-elements" data-insert="appendTo" data-action="remove">
  *
  *       href should start with # and provide relative path to html file to be loaded
  *

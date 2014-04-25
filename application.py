@@ -11,6 +11,7 @@ from flask.ext.mongoengine import MongoEngine
 from controllers.auth import login_manager, blueprint as auth
 from controllers.frontend import blueprint as frontend
 from controllers.admin import blueprint as admin
+from controllers.user import blueprint as user
 from cache import cache
 
 
@@ -23,6 +24,7 @@ app.jinja_env.add_extension('pyjade.ext.jinja.PyJadeExtension')
 app.register_blueprint(frontend, url_prefix='')
 app.register_blueprint(auth, url_prefix='/auth')
 app.register_blueprint(admin, url_prefix='/admin')
+app.register_blueprint(user, url_prefix='/user')
 
 assets = Environment(app)
 assets.url = app.static_url_path
@@ -43,13 +45,13 @@ login_manager.init_app(app)
 def home():
 	return redirect(url_for('frontend.home'))
 
-# @app.route('/login/')
-# def login():
-# 	return redirect(url_for('auth.login'))
+@app.route('/login/')
+def login():
+	return redirect(url_for('auth.login'))
 
-# @app.route('/logout/')
-# def logout():
-# 	return redirect(url_for('auth.logout'))
+@app.route('/logout/')
+def logout():
+	return redirect(url_for('auth.logout'))
 
 
 if __name__ == '__main__':
