@@ -41,7 +41,7 @@ def create_app():
 
 	return app
 
-def create_db():
+def create_db(app):
 
 	db = MongoEngine(app)
 	return db
@@ -93,19 +93,20 @@ def setup_admin(app):
 
 def setup_thumbnail(app):
 	thumb = Thumbnail(app)
-	
 
-app = create_app()
-db = create_db()
-
-
-
-
-if __name__ == '__main__':
-	# handler = RotatingFileHandler("log/error.log", maxBytes=10000000, backupCount=10)
-	# handler.setLevel(logging.WARNING)
-	# app.logger.addHandler(handler)
-
+def setup():
 	setup_routes(app)
 	setup_admin(app)
-	app.run(debug=True, port=5005)
+	setup_thumbnail(app)
+	return app
+
+app = create_app()
+db = create_db(app)
+
+# if __name__ == '__main__':
+# 	# handler = RotatingFileHandler("log/error.log", maxBytes=10000000, backupCount=10)
+# 	# handler.setLevel(logging.WARNING)
+# 	# app.logger.addHandler(handler)
+
+# 	setup(app)
+# 	app.run(debug=True, port=5005)
