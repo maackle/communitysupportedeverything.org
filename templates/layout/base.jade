@@ -7,7 +7,7 @@ html
 		link(rel="stylesheet", href="/static/build/main.css")
 	body
 		block navbar
-			nav.navbar
+			nav#navbar: .container
 				if current_user.is_authenticated()
 					p Hello #{current_user.email}
 						a(href=url_for('auth.logout')) log out
@@ -17,8 +17,9 @@ html
 						a(href=url_for('auth.register')) register
 				p
 					a(href=url_for('home')) home
+					a(href=url_for('user.home')) users
 					if current_user.is_authenticated()
-						a(href="#") profile
+						a(href=url_for('user.profile', user_slug=current_user.slug)) profile
 			hr
 
 		block messages
@@ -33,10 +34,10 @@ html
 		block main_content
 
 		block scripts
-			script(src='static/js/jquery-1.10.2.min.js', type='text/javascript')
-			script(src='static/js/bootstrap/bootstrap.min.js', type='text/javascript')
+			script(src='/static/js/jquery-1.10.2.min.js', type='text/javascript')
+			script(src='/static/js/bootstrap/bootstrap.min.js', type='text/javascript')
 			//if lt IE 9
-				script(src='static/js/bootstrap/html5shiv.js')
+				script(src='/static/js/bootstrap/html5shiv.js')
 			script.
 				document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':7331/livereload.js?snipver=1"></' + 'script>')
 			script(type='text/javascript')

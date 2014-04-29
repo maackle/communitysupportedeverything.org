@@ -1,0 +1,188 @@
+extends layout/profile.jade
+
+block profile_name
+  = user.profile.full_name
+
+block profile_tagline
+  | A tagline goeth here.
+
+block main_content
+  .container.home
+    // BEGIN #homepage
+    #homepage
+      // BEGIN .row
+      .row
+        // BEGIN .twelve columns
+        .twelve.columns
+          .featured-page
+            .feature-img
+              img.attachment-profile-img.wp-post-image(src=url_for('user.image', user_slug=user.slug), alt='profile_img')
+            script(type='text/javascript')
+              /**
+              * How to use fetch function:
+              * @param {string} Your Twitter widget ID.
+              * @param {string} The ID of the DOM element you want to write results to.
+              * @param {int} Optional - the maximum number of tweets you want returned. Must
+              *     be a number between 1 and 20.
+              * @param {boolean} Optional - set true if you want urls and hash
+              tags to be hyperlinked!
+              * @param {boolean} Optional - Set false if you dont want user photo /
+              *     name for tweet to show.
+              * @param {boolean} Optional - Set false if you dont want time of tweet
+              *     to show.
+              * @param {function/string} Optional - A function you can specify to format
+              *     tweet date/time however you like. This function takes a JavaScript date
+              *     as a parameter and returns a String representation of that date.
+              *     Alternatively you may specify the string 'default' to leave it with
+              *     Twitter's default renderings.
+              * @param {boolean} Optional - Show retweets or not. Set false to not show.
+              * @param {function/string} Optional - A function to call when data is ready. It
+              *     also passes the data to this function should you wish to manipulate it
+              *     yourself before outputting. If you specify this parameter you  must
+              *     output data yourself!
+              */
+              twitterFetcher.fetch('344968668209352704', '', 1, true, false, true, '', false, handleTweets);
+              function handleTweets(tweets){
+              var x = tweets.length;
+              var n = 0;
+              var element = document.getElementById('tweets');
+              var html = '<span class="twitter-arrow"></span><div class="twitter-feed">';
+              while(n < x) {
+              html += '' + tweets[n] + '';
+              n++;
+              }
+              html += '</div>';
+              element.innerHTML = html;
+              }
+            #tweets
+              span.twitter-arrow
+              .twitter-feed
+                p.tweet
+                  | Need to switch between multiple languages with your WordPress theme&quest; We&rsquor;re working with the good folks at WPML&excl;
+                  a(href='http://t.co/UXId3KZnRW', data-expanded-url='http://organicthemes.com/wpml-multilingual-theme-compatibility/', target='_blank', title='http://organicthemes.com/wpml-multilingual-theme-compatibility/', data-scribe='element:url')
+                    span http&colon;&sol;&sol;
+                    span organicthemes&period;com&sol;wpml-multiling
+                    span ual-theme-compatibility&sol;
+                    span
+                      span &NonBreakingSpace;
+                      | &mldr;
+                p.timePosted Posted 19 hours ago
+                p.interact
+                  a.twitter_reply_icon(href='https://twitter.com/intent/tweet?in_reply_to=453667569400942592') Reply
+                  a.twitter_retweet_icon(href='https://twitter.com/intent/retweet?tweet_id=453667569400942592') Retweet
+                  a.twitter_fav_icon(href='https://twitter.com/intent/favorite?tweet_id=453667569400942592') Favorite
+            ul.social-icons
+              li
+                a.link-facebook(href='http://facebook.com/', target='_blank')
+                  span.organicon-facebook(aria-hidden='true')
+              li
+                a.link-twitter(href='http://twitter.com/', target='_blank')
+                  span.organicon-twitter(aria-hidden='true')
+              li
+                a.link-linkedin(href='http://linkedin.com/', target='_blank')
+                  span.organicon-linkedin(aria-hidden='true')
+              li
+                a.link-dribbble(href='http://dribbble.com/', target='_blank')
+                  span.organicon-dribbble(aria-hidden='true')
+              li
+                a.link-skype(href='skype://MySkypeName', target='_blank')
+                  span.organicon-skype(aria-hidden='true')
+              li
+                a.link-google(href='https://plus.google.com/', target='_blank')
+                  span.organicon-googleplus(aria-hidden='true')
+              li
+                a.link-pinterest(href='http://pinterest.com/', target='_blank')
+                  span.organicon-pinterest(aria-hidden='true')
+              li
+                a.link-github(href='http://github.com/', target='_blank')
+                  span.organicon-github(aria-hidden='true')
+              li
+                a.link-instagram(href='http://instagram.com/', target='_blank')
+                  span.organicon-instagram-2(aria-hidden='true')
+              li
+                a.link-youtube(href='http://youtube.com/', target='_blank')
+                  span.organicon-youtube(aria-hidden='true')
+              li
+                a.link-email(href='mailto:myemail@mysite.com', target='_blank')
+                  span.organicon-envelop(aria-hidden='true')
+            h2.headline.text-center I&rsquor;m A Professional Dude
+            .organic-column.one-half
+              | Lorem ipsum sample link dolor sit amet&comma; consectetur adipiscing elit&period; Sed cursus&comma; nulla a egestas tristique&comma; libero leo sodales sapien&comma; vel luctus libero nisi vel nibh&period; Suspendisse ultrices&comma; leo quis dignissim rutrum&comma; nibh arcu vestibulum velit&comma; eget vehicula sem felis in ante&period; Donec condimentum sem nec libero accumsan sed accumsan odio luctus&period; Curabitur ac vehicula quam&period; Sed tincidunt&comma; enim sed sollicitudin cursus&comma; elit massa facilisis ligula&comma; eget aliquam lectus libero sed orci&period; Cras non nisl vel neque egestas euismod&period; Quisque consequat dapibus consectetur&period; Cras mattis consectetur fermentum&period;
+            .organic-column.one-half.last
+              | Maecenas lacus lectus&comma; tincidunt vitae tristique eu&comma; euismod in quam&period; Praesent euismod suscipit dui&comma; eu ultrices sapien cursus in&period; Ut in leo ut elit congue mattis&period; Quisque sagittis&comma; nibh quis scelerisque dictum&comma; eros diam tincidunt urna&comma; id varius lorem libero quis lorem&period; In cursus justo nec enim convallis et aliquet mi accumsan&period; Aliquam ultrices blandit lacus&comma; sed dictum felis rhoncus lacinia&period; Integer vel nunc in ante condimentum mollis eu non nisl&period; Quisque blandit aliquam ligula&comma; ac ultrices urna auctor in&period; Vestibulum laoreet&comma; lorem in sodales rhoncus&comma; massa metus mattis odio&comma; sed volutpat massa nibh eget mi&period;
+            .clearboth
+            p
+              .align-center.text-center
+                a.more-link(href='http://organicthemes.com/demo/profile/professional/#more-113') Read More
+          // END .twelve columns
+        // END .row
+      // END #homepage
+    // BEGIN #slideshow
+    #slideshow
+      h2.headline.borderless.text-center My Projects
+      // BEGIN .row
+      .row
+        // BEGIN .twelve columns
+        .twelve.columns
+          // BEGIN .flexslider
+          .flexslider(data-speed='10000')
+            // BEGIN .slides
+            // END .flexslider
+            .flex-viewport(style='overflow: hidden; position: relative; height: 497px; ')
+              ul.slides(style='width: 1600%; margin-left: -4410.33332824707px; ')
+                li.clone(style='width: 882.0666656494141px; float: left; display: block; ')
+                  .feature-img
+                    a(href='http://organicthemes.com/demo/profile/2012/12/22/cartoon-character/', rel='bookmark')
+                      img.attachment-slide.wp-post-image(src='/static/theme-pages/profile/dude_files/cartoon_character.png', alt='cartoon_character')
+                li(style='width: 882.0666656494141px; float: left; display: block; ')
+                  .feature-img
+                    a(href='http://organicthemes.com/demo/profile/2012/12/23/organic-themes/', rel='bookmark')
+                      img.attachment-slide.wp-post-image(src='/static/theme-pages/profile/dude_files/organic_themes_01.png', alt='organic_themes_01')
+                li(style='width: 882.0666656494141px; float: left; display: block; ')
+                  .feature-img
+                    a(href='http://organicthemes.com/demo/profile/2012/12/23/kahuna-host/', rel='bookmark')
+                      img.attachment-slide.wp-post-image(src='/static/theme-pages/profile/dude_files/kahuna_host_01.png', alt='kahuna_host_01')
+                li(style='width: 882.0666656494141px; float: left; display: block; ')
+                  .feature-img
+                    a(href='http://organicthemes.com/demo/profile/2012/12/23/blissful-blog/', rel='bookmark')
+                      img.attachment-slide.wp-post-image(src='/static/theme-pages/profile/dude_files/blissful_blog_01.png', alt='blissful_blog_01')
+                li(style='width: 882.0666656494141px; float: left; display: block; ')
+                  .feature-img
+                    a(href='http://organicthemes.com/demo/profile/2012/12/23/invulu-branding/', rel='bookmark')
+                      img.attachment-slide.wp-post-image(src='/static/theme-pages/profile/dude_files/invulu_logo_01.png', alt='invulu_logo_01')
+                li.flex-active-slide(style='width: 882.0666656494141px; float: left; display: block; ')
+                  .feature-img
+                    a(href='http://organicthemes.com/demo/profile/2012/12/23/logo-design-example/', rel='bookmark')
+                      img.attachment-slide.wp-post-image(src='/static/theme-pages/profile/dude_files/fierce_ocean_logo_01.png', alt='fierce_ocean_logo_01')
+                li(style='width: 882.0666656494141px; float: left; display: block; ')
+                  .feature-img
+                    a(href='http://organicthemes.com/demo/profile/2012/12/22/cartoon-character/', rel='bookmark')
+                      img.attachment-slide.wp-post-image(src='/static/theme-pages/profile/dude_files/cartoon_character.png', alt='cartoon_character')
+                // END .slides
+                li.clone(style='width: 882.0666656494141px; float: left; display: block; ')
+                  .feature-img
+                    a(href='http://organicthemes.com/demo/profile/2012/12/23/organic-themes/', rel='bookmark')
+                      img.attachment-slide.wp-post-image(src='/static/theme-pages/profile/dude_files/organic_themes_01.png', alt='organic_themes_01')
+            ol.flex-control-nav.flex-control-paging
+              li
+                a 1
+              li
+                a 2
+              li
+                a 3
+              li
+                a 4
+              li
+                a.flex-active 5
+              li
+                a 6
+            ul.flex-direction-nav
+              li
+                a.flex-prev(href='http://organicthemes.com/demo/profile/#') Previous
+              li
+                a.flex-next(href='http://organicthemes.com/demo/profile/#') Next
+          img.screen(src='/static/theme-pages/profile/dude_files/screen.png', title='Screen', alt='Screen')
+          // END .twelve columns
+        // END .row
+      // END #slideshow
+    // END .container

@@ -1,0 +1,15 @@
+extends layout/base.jade
+
+- from 'mixins.jade' import formfield, formsubmit
+
+block main_content
+	.container
+		h1 profile
+		for e in form.errors
+			li= e
+		form.form.resident-profile-form(method="POST", enctype="multipart/form-data")
+			!= form.csrf_token
+			.row: .span6: +formfield(form.full_name)
+			+formfield(form.image)
+			+formfield(form.short_bio)
+			+formsubmit()

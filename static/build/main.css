@@ -7731,3 +7731,17 @@ a.badge:focus {
     overflow: visible !important;
   }
 }
+#navbar a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 5px;
+  background: #ffa;
+}
+.form input,
+.form textarea,
+.form select {
+  width: 100%;
+}
+.resident-profile-form textarea {
+  height: 300px;
+}

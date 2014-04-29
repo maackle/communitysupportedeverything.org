@@ -1,6 +1,8 @@
 mixin formfield(field, placeholder="")
 	.form-group(class=('has-error' if field.errors else ''))
 		= field.label(class="control-label")
+		if field.type == 'FileField'
+			img(src=field)
 		|  
 		!= field(class="form-control", placeholder=placeholder)
 		ul.errors

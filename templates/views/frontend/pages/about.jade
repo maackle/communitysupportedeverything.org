@@ -10,65 +10,15 @@
     article
       .thumbnails.about-items(style='margin-left: 2em;')
         ul.thumbnails.about-items
-          li.span2.center
-            .item
-              img.img-circle(src='static/images/residents/henry.jpg', alt='Henry Polacek')
-              .about-overlay.img-circle
-                a.profile-link(href='/static/theme-pages/profile/dude.html') View Profile
-            h5
-              | Henry
-              br
-              | Polacek
-              br
-            p.smallFontBy08
-              | Henry is exporing how community is created through events, specifically workshops and skill shares. This Spring he'll be organizing a series of garden and permaculture workshops.
-            p
-              a.profile-link(href='/static/theme-pages/profile/dude.html') Read more...
-          li.span2.center
-            .item
-              img.img-circle(src='static/images/residents/lydia.jpg', alt='Lydia Grijalva')
-              .about-overlay.img-circle
-                a.profile-link(href='/static/theme-pages/profile/dude.html') View Profile
-            h5
-              | Lydia
-              br
-              | Grijalva
-              br
-            p.smallFontBy08
-              | Lydia is writing, editing, and publishing resource zine dealing with the issue of food security in Portland, in all it's forms.
-            p
-              a.profile-link(href='/static/theme-pages/profile/dude.html') Read more...
-          li.span2.center
-            .item
-              img.img-circle(src='static/images/residents/cameron.jpg', alt='Cameron Frank')
-              .about-overlay.img-circle
-                a.profile-link(href='/static/theme-pages/profile/dude.html') View Profile
-            h5
-              | Cameron Frank
-              br
-            p.smallFontBy08 Cameron has spent the year building the Student Union at PSU.
-            p
-              a.profile-link(href='/static/theme-pages/profile/dude.html') Read more...
-          li.span2.center
-            .item
-              img.img-circle(src='static/images/residents/joseph.jpg', alt='Joseph Drushal')
-              .about-overlay.img-circle
-                a.profile-link(href='/static/theme-pages/profile/dude.html') View Profile
-            h5
-              | Joseph Drushal
-              br
-            p.smallFontBy08
-              | Joseph is designing a gratitude based currency to facilitate the exchange of local resources, time, and skills without money.
-            p
-              a.profile-link(href='/static/theme-pages/profile/dude.html') Read more...
-          li.span2.center
-            .item
-              img.img-circle(src='static/images/residents/michael.jpg', alt='Mikele Schnitman')
-              .about-overlay.img-circle
-                a.profile-link(href='/static/theme-pages/profile/dude.html') View Profile
-            h5
-              | Mikele Schnitman
-              br
-            p.smallFontBy08 Mikele is working on data visualization and storytelling.
-            p
-              a.profile-link(href='/static/theme-pages/profile/dude.html') Read more...
+          for user in residents
+            li.span2.center
+              .item
+                img.img-circle(src=url_for('user.image', user_slug=user.slug), alt=user.profile.full_name)
+                .about-overlay.img-circle
+                  a.profile-link(href=url_for('user.profile', user_slug=user.slug)) View Profile
+              h5= user.profile.full_name
+                br
+              p.smallFontBy08= user.profile.short_bio
+              p
+                a.profile-link(href=url_for('user.profile', user_slug=user.slug)) Read more...
+         

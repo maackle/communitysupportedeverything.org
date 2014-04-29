@@ -1,25 +1,60 @@
 from flask.ext.login import UserMixin
 from flask.ext.mongoengine import Document
 from mongoengine import *
+from mongoengine import signals
 
+from util import slugify
 
-class Profile(EmbeddedDocument):
+from application import db
 
-	name = StringField(max_length=128, required=True)
+class Project(db.Document):
 
-
-class Project(Document):
+	def __unicode__(self):
+		return self.name
 	
-	name = StringField(max_length=128, required=True)
-	owner = ReferenceField('User')
+	name = db.StringField(max_length=128, required=True)
+	image = db.ImageField(size=(1024, 1024))
+	slug = db.StringField(max_length=128, required=True, unique=True)
+
+	@classmethod
+	def pre_save(cls, sender, document, **kwargs):
+		document.slug = slugify(document.name)
 
 
-class User(Document, UserMixin):
+class Profile(db.EmbeddedDocument):
 
-	email = StringField(max_length=128, required=True)
-	password = StringField(max_length=128, required=True)
-	profile = EmbeddedDocumentField(Profile)
-	projects = ListField(ReferenceField(Project))
+	meta = {'allow_inheritance': True}
+	full_name = db.StringField(max_length=128, required=True)
+
+
+class ResidentProfile(Profile):
+
+	# TODO: inherit from Profile.
+
+	# full_name = db.StringField(max_length=128, required=True)
+	short_bio = db.StringField(max_length=2048)
+	image = db.ImageField(size=(1024, 1024))
+
+	projects = db.ListField(db.ReferenceField(Project))
+
+
+class User(db.Document, UserMixin):
+
+	def __unicode__(self):
+		return self.profile.full_name
+
+	meta = {
+		'allow_inheritance': True,
+		'indexes': ['id', 'slug',],
+	}
+
+	email = db.StringField(max_length=128, required=True)
+	password = db.StringField(max_length=128, required=True)
+
+	slug = db.StringField(max_length=128, required=True)
+	
+	profile = db.EmbeddedDocumentField(Profile)
+
 
 	def get_id(self):
 		return str(self.id)
@@ -28,3 +63,18 @@ class User(Document, UserMixin):
 	def authenticate(email, password):
 		user = User.objects(email=email, password=password).first()
 		return user
+
+	@classmethod
+	def pre_save(cls, sender, document, **kwargs):
+		document.slug = slugify(document.profile.full_name)
+		document.email = document.email.lower()
+
+
+class Resident(User):
+
+	profile = db.EmbeddedDocumentField(ResidentProfile)
+
+
+signals.pre_save.connect(User.pre_save, sender=User)
+signals.pre_save.connect(Resident.pre_save, sender=Resident)
+signals.pre_save.connect(Project.pre_save, sender=Project)

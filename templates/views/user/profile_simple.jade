@@ -1,0 +1,25 @@
+extends layout/base.jade
+
+- from 'mixins.jade' import formfield
+
+block main_content
+	.container
+		h1 profile
+		p: a(href=url_for('user.profile_edit', user_slug=user.slug)) (edit)
+
+		table.table: tbody
+			tr
+				td Name
+				td= user.profile.full_name
+			tr
+				td Password
+				td= user.password
+			tr
+				td Image
+				td: img(src=url_for('user.image', user_slug=user.slug))
+			tr
+				td Email
+				td= user.email
+			tr
+				td Short Bio
+				td= user.profile.short_bio
