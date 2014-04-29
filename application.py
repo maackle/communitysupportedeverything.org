@@ -22,8 +22,10 @@ def create_app():
 	app.config.from_object('config.settings')
 	try:
 		app.config.from_envvar('CSE_SETTINGS')
+		print("Loaded config from envvar CSE_SETTINGS")
 	except:
 		app.config.from_object('config.development')
+		print("Loaded DEVELOPMENT config")
 
 	app.jinja_env.add_extension('pyjade.ext.jinja.PyJadeExtension')
 
