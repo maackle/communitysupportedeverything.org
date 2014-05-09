@@ -22,4 +22,4 @@ def image(project, **kwargs):
 @blueprint.route('/<project_slug>/overview/')
 @project_required
 def overview(project):
-	render_template('views/project/overview.html', project=project)
+	return render_template('views/project/overview.html', project=project)
