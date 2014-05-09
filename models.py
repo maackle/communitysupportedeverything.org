@@ -15,6 +15,8 @@ class Project(db.Document):
 	name = db.StringField(max_length=128, required=True)
 	image = db.ImageField(size=(1024, 1024))
 	slug = db.StringField(max_length=128, required=True, unique=True)
+	excerpt = db.StringField(max_length=4096)
+	content = db.StringField(max_length=8192)
 
 	@classmethod
 	def pre_save(cls, sender, document, **kwargs):
