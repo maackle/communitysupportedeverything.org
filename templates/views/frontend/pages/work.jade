@@ -8,7 +8,7 @@
         .span8.offset2
           p
             | What would happen if communities took higher education into their own hands? What if we harnessed the power and creativity of learning to develop local solutions to the challenges we face as a global society? What if instead of degrees and grades, we shared our solutions, and were credited by the direct impact our work has on the world?
-      nav.submenu
+      //- nav.submenu
         ul
           li
             a.plugin-filter.active(href='#', data-filter='all') All
@@ -21,11 +21,14 @@
     article
       ul.thumbnails.plugin-filter-elements.portfolio-items
         for project in projects
-          li.span4.mix.illustration.branding
+          li.span3.mix
             a(href='#'+url_for('project.overview', project_slug=project.slug), data-destination='portfolio-items', data-insert='before')
-              img(src=url_for('project.image', project_slug=project.slug), alt='Treble')
-              .portfolio-overlay
-              h4 Vita Worldwide
+              if project.image
+                img(src=url_for('project.image', project_slug=project.slug), alt='Community Supported Everything')
+              else
+                img(src='/static/images/project-empty.png', alt='Community Supported Everything')
+              .portfolio-overlay`
+              //-h4 Vita Worldwide
             p.center= project.name
         //-
           li.span4.mix.illustration.branding
@@ -46,7 +49,7 @@
               .portfolio-overlay
               h4 Escape The Grid 2
             p.center Silent Dance Parties
-    footer
+    //-footer
       .show-more-cube
         a(href='#/static/theme-pages/portfolio/readmore.html', data-destination='plugin-filter-elements', data-insert='appendTo', data-action='remove')
           span

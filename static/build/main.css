@@ -122,6 +122,16 @@
   display: block;
   color: #fff;
   overflow: hidden;
+  padding: 4px;
+  background: white;
+  border: solid 1px #CCC;
+}
+.portfolio-items a img {
+  width: 100%;
+}
+.portfolio-items .project-name {
+  margin: 1em 0 0 0 !important;
+  text-align: center;
 }
 .portfolio-items .portfolio-overlay {
   width: 100%;
