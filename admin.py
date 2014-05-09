@@ -41,6 +41,14 @@ class ResidentAdminView(UserAdminView):
 class ProjectAdminView(MyModelView):
 	model = models.Project
 
+	form_args = {
+		'excerpt': {
+			'widget': TextArea(),
+		},
+		'content': {
+			'widget': TextArea(),
+		},
+	}
 
 class MyView(BaseView):
     @expose('/')
