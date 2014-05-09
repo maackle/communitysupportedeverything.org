@@ -92,7 +92,11 @@ Develop away.
 Deployment
 ==========
 
-We are currently using Heroku for a dev server. To deploy, make sure you're on the git master branch, and simply:
+We are currently using Heroku for a dev server. To set up the git remote:
+
+	git remote add git@heroku.com:community-supported-everything.git
+
+To deploy, first ask us for collaborator access. Make sure you're on the git master branch, and simply:
 
 	git push heroku
 
