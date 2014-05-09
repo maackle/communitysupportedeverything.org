@@ -8,3 +8,4 @@ node_modules
 log/*
 !log/.keep
 .flask-cache
+venv/

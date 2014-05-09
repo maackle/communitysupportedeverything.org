@@ -31,6 +31,9 @@ class ResidentAdminView(UserAdminView):
 			'form_args': {
 				'short_bio': {
 					'widget': TextArea(),
+				},
+				'bio': {
+					'widget': TextArea(),
 				}
 			}
 		}

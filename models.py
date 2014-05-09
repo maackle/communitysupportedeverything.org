@@ -35,6 +35,7 @@ class ResidentProfile(Profile):
 
 	# full_name = db.StringField(max_length=128, required=True)
 	short_bio = db.StringField(max_length=2048)
+	bio = db.StringField(max_length=8192)
 	image = db.ImageField(size=(1024, 1024))
 
 	projects = db.ListField(db.ReferenceField(Project))
