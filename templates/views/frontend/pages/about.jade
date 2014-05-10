@@ -1,8 +1,8 @@
 #page-about.pages.page-about
   .container
     header
-      h4.line-divider About
-      h1 Who We Are
+      h4.line-divider Who We Are
+      h2 Residents
       .row
         .span8.offset2
           p
@@ -10,6 +10,7 @@
     article
       .thumbnails.about-items
         ul.thumbnails.about-items
+          li.span2
           for user in residents
             li.span2.center
               .item
@@ -24,4 +25,30 @@
               p.smallFontBy08= user.profile.short_bio
               p
                 a.profile-link(href=url_for('user.profile', user_slug=user.slug)) Read more...
-         
+    article
+      h2.center Directors
+    
+      ul.thumbnails.about-items
+        li.span4
+        li.span2.center
+          .item
+            img.img-circle(src='/static/images/residents/sam.jpg', alt='Sam Smith')
+            .about-overlay.img-circle
+              a.profile-link(href='/user/sam-smith/') View Profile
+          h5
+            | Sam Smith
+            br
+          p.smallFontBy08 I'm a simulated Sam... a sim-Sam. Some sim-Sam I am.
+          p
+            a.profile-link(href='/user/sam-smith/') Read more...
+        li.span2.center
+          .item
+            img.img-circle(src='/static/images/residents/laura.jpg', alt='Laura Scher')
+            .about-overlay.img-circle
+              a.profile-link(href='/user/laura-scher/') View Profile
+          h5
+            | Laura Scher
+            br
+          p.smallFontBy08 Hi, I'm Laura! Lore-uh. Low-ruh. Laura!
+          p
+            a.profile-link(href='/user/laura-scher/') Read more...

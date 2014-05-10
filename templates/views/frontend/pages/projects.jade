@@ -1,7 +1,56 @@
 #page-blog.pages.page-blog
-    .container
+  .container
       header
         h4.line-divider Projects
+        h1 Resident Projects
+        //-.row
+          .span8.offset2
+            .input-append
+              input#appendedInputButton.span5(type='text', placeholder='Search Blog')
+              button.btn.btn-primary.sicon-search.sicon-white(type='button')
+                i Search
+      article
+        ul.thumbnails.plugin-filter-elements.portfolio-items
+          for project in projects
+            li.span3.mix
+              a(href='#'+url_for('project.overview', project_slug=project.slug), data-destination='portfolio-items', data-insert='before')
+                if project.image
+                  img(src=url_for('project.image', project_slug=project.slug), alt='Community Supported Everything')
+                else
+                  img(src='/static/images/project-empty.png', alt='Community Supported Everything')
+                .portfolio-overlay`
+                //-h4 Vita Worldwide
+              p.center= project.name
+          //-
+            li.span4.mix.illustration.branding
+              a(href='#/static/theme-pages/portfolio/project_1.html', data-destination='portfolio-items', data-insert='before')
+                img(src='http://placehold.it/390x300', alt='Treble')
+                .portfolio-overlay
+                h4 Vita Worldwide
+              p.center Lending Library
+            li.span4.mix.branding.typography.illustration
+              a(href='#/static/theme-pages/portfolio/project_2.html', data-destination='portfolio-items', data-insert='before')
+                img(src='http://placehold.it/390x300', alt='Treble')
+                .portfolio-overlay
+                h4 Kokong Magazine
+              p.center Community Garden
+            li.span4.mix.photography.illustration
+              a(href='#/static/theme-pages/portfolio/project_3.html', data-destination='portfolio-items', data-insert='before')
+                img(src='http://placehold.it/390x300', alt='Treble')
+                .portfolio-overlay
+                h4 Escape The Grid 2
+              p.center Silent Dance Parties
+      //-footer
+        .show-more-cube
+          a(href='#/static/theme-pages/portfolio/readmore.html', data-destination='plugin-filter-elements', data-insert='appendTo', data-action='remove')
+            span
+              | Show
+              br
+              | More
+//-#page-blog.pages.page-blog
+    .container
+      header
+        h4.line-divider Updates
         h1 Most Recent Project Updates
         .row
           .span8.offset2
