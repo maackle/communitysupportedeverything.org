@@ -10,7 +10,7 @@
     article
       .thumbnails.about-items
         ul.thumbnails.about-items
-          li.span2
+          li.span1
           for user in residents
             li.span2.center
               .item
@@ -27,8 +27,8 @@
                 a.profile-link(href=url_for('user.profile', user_slug=user.slug)) Read more...
     article
       h2.center Directors
-    
-      ul.thumbnails.about-items
+      br
+      ul.thumbnails.about-items.row
         li.span4
         li.span2.center
           .item
@@ -52,3 +52,32 @@
           p.smallFontBy08 Hi, I'm Laura! Lore-uh. Low-ruh. Laura!
           p
             a.profile-link(href='/user/laura-scher/') Read more...
+    article
+      h2.center Other Contributors
+      .row.contributors
+        .span3.offset2
+          h4 Advisors
+          ul
+            li John Doe
+            li Jane Smith
+            li Generica Ladue
+        .span3
+          h4 Web site
+          ul
+            li 
+              h5.name Michael Dougherty
+              a.site(href='http://michaeldougherty.info') http://michaeldougherty.info
+            li 
+              h5.name Cameron Gaut
+              a.site(href='http://seegodesign.com') http://seegodesign.com
+            li 
+              h5.name Shane Stranahan
+              a.site(href='#') http://shanestranahan.com       
+        .span3
+          h4 Thanks to
+          ul
+            li John Doe
+            li Jane Smith
+            li Generica Ladue
+      .padb2
+
