@@ -300,6 +300,7 @@
   display: inline-block;
   color: #fff;
   overflow: hidden;
+  max-width: 300px;
 }
 .page-about .about-items .item:hover .about-overlay {
   opacity: 0.95;

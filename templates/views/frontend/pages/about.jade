@@ -2,82 +2,55 @@
   .container
     header
       h4.line-divider Who We Are
-      h2 Residents
+      h1 Residents
       .row
         .span8.offset2
           p
             | We are in our pilot year, and we currently have 5 residents, all working on a different community project of their own design.
     article
       .thumbnails.about-items
-        ul.thumbnails.about-items
-          li.span1
-          for user in residents
-            li.span2.center
-              .item
-                if user.profile.image
-                  img.img-circle(src=url_for('user.image', user_slug=user.slug), alt=user.profile.full_name)
-                else 
-                  img.img-circle(src='/static/images/project-empty.png', alt=user.profile.full_name)
-                .about-overlay.img-circle
-                  a.profile-link(href=url_for('user.profile', user_slug=user.slug)) View Profile
-              h5= user.profile.full_name
-                br
-              p.smallFontBy08= user.profile.short_bio
-              p
-                a.profile-link(href=url_for('user.profile', user_slug=user.slug)) Read more...
+        .row-fluid
+          ul.thumbnails.about-items
+            li.span1
+            for user in residents
+              li.span2.center
+                .item
+                  if user.profile.image
+                    img.img-circle(src=url_for('user.image', user_slug=user.slug), alt=user.profile.full_name)
+                  else 
+                    img.img-circle(src='/static/images/project-empty.png', alt=user.profile.full_name)
+                  .about-overlay.img-circle
+                    a.profile-link(href=url_for('user.profile', user_slug=user.slug)) View Profile
+                h5= user.profile.full_name
+                  br
+                p.smallFontBy08= user.profile.short_bio
+                p
+                  a.profile-link(href=url_for('user.profile', user_slug=user.slug)) Read more...
     article
-      h2.center Directors
+      h1.center Directors
       br
-      ul.thumbnails.about-items.row
-        li.span4
-        li.span2.center
-          .item
-            img.img-circle(src='/static/images/residents/sam.jpg', alt='Sam Smith')
-            .about-overlay.img-circle
-              a.profile-link(href='/user/sam-smith/') View Profile
-          h5
-            | Sam Smith
-            br
-          p.smallFontBy08 I'm a simulated Sam... a sim-Sam. Some sim-Sam I am.
-          p
-            a.profile-link(href='/user/sam-smith/') Read more...
-        li.span2.center
-          .item
-            img.img-circle(src='/static/images/residents/laura.jpg', alt='Laura Scher')
-            .about-overlay.img-circle
-              a.profile-link(href='/user/laura-scher/') View Profile
-          h5
-            | Laura Scher
-            br
-          p.smallFontBy08 Hi, I'm Laura! Lore-uh. Low-ruh. Laura!
-          p
-            a.profile-link(href='/user/laura-scher/') Read more...
-    article
-      h2.center Other Contributors
-      .row.contributors
-        .span3.offset2
-          h4 Advisors
-          ul
-            li John Doe
-            li Jane Smith
-            li Generica Ladue
-        .span3
-          h4 Web site
-          ul
-            li 
-              h5.name Michael Dougherty
-              a.site(href='http://michaeldougherty.info') http://michaeldougherty.info
-            li 
-              h5.name Cameron Gaut
-              a.site(href='http://seegodesign.com') http://seegodesign.com
-            li 
-              h5.name Shane Stranahan
-              a.site(href='#') http://shanestranahan.com       
-        .span3
-          h4 Thanks to
-          ul
-            li John Doe
-            li Jane Smith
-            li Generica Ladue
-      .padb2
-
+      .row-fluid
+        ul.thumbnails.about-items
+          li.span4
+          li.span2.center
+            .item
+              img.img-circle(src='/static/images/residents/sam.jpg', alt='Sam Smith')
+              .about-overlay.img-circle
+                a.profile-link(href='/user/sam-smith/') View Profile
+            h5
+              | Sam Smith
+              br
+            p.smallFontBy08 I'm a simulated Sam... a sim-Sam. Some sim-Sam I am.
+            p
+              a.profile-link(href='/user/sam-smith/') Read more...
+          li.span2.center
+            .item
+              img.img-circle(src='/static/images/residents/laura.jpg', alt='Laura Scher')
+              .about-overlay.img-circle
+                a.profile-link(href='/user/laura-scher/') View Profile
+            h5
+              | Laura Scher
+              br
+            p.smallFontBy08 Hi, I'm Laura! Lore-uh. Low-ruh. Laura!
+            p
+              a.profile-link(href='/user/laura-scher/') Read more...
