@@ -33,8 +33,8 @@ def create_app():
 	assets.url = app.static_url_path
 
 	cache.init_app(app, config={
-		'CACHE_TYPE': 'filesystem',
-		'CACHE_DIR': '.flask-cache',
+		'CACHE_TYPE': 'simple',
+		# 'CACHE_DIR': '.flask-cache',
 		'CACHE_THRESHOLD': 1000000,
 		'CACHE_DEFAULT_TIMEOUT': 60*60*60*24,  # one day
 		})

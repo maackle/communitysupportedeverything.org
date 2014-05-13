@@ -1,6 +1,6 @@
 import re
 from unicodedata import normalize
-from flask import make_response
+from flask import make_response, send_file
 from gridfs.errors import NoFile
 
 _punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+')
@@ -19,6 +19,13 @@ def gridfs_response(file):
 		data = file.read()
 		res = make_response(data)
 		res.mimetype = file.content_type
+		return res
+	except NoFile:
+		abort(404)
+
+def gridfs_response_raw(data, content_type):
+	try:
+		res = send_file(data, mimetype=content_type)
 		return res
 	except NoFile:
 		abort(404)
