@@ -56,6 +56,19 @@ Running the server
 
 Now you should have a server running at http://localhost:5005.
 
+Running a local MongoDB instance (and using it)
+-----------------------------------------------
+
+By default the app connects to a remote MongoDB instance by default. To use a local instance, first make sure MongoDB is installed locally. You can run:
+
+	mongod
+
+in a new terminal window to start a development instance. Then, run the server from the command line like so:
+
+	CSE_SETTINGS="config/development.py" python server.py
+
+to use the development settings.
+
 
 Frontend Setup
 ==============
