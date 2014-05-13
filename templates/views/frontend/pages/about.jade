@@ -19,12 +19,12 @@
                     img.img-circle(src=url_for('user.image', user_slug=user.slug), alt=user.profile.full_name)
                   else 
                     img.img-circle(src='/static/images/project-empty.png', alt=user.profile.full_name)
-                  .about-overlay.img-circle
+                  //- .about-overlay.img-circle
                     a.profile-link(href=url_for('user.profile', user_slug=user.slug)) View Profile
                 h5= user.profile.full_name
                   br
                 p.smallFontBy08= user.profile.short_bio
-                p
+                //- p
                   a.profile-link(href=url_for('user.profile', user_slug=user.slug)) Read more...
     article
       h1.center Directors
@@ -35,22 +35,22 @@
           li.span2.center
             .item
               img.img-circle(src='/static/images/residents/sam.jpg', alt='Sam Smith')
-              .about-overlay.img-circle
+              //- .about-overlay.img-circle
                 a.profile-link(href='/user/sam-smith/') View Profile
             h5
               | Sam Smith
               br
             p.smallFontBy08 I'm a simulated Sam... a sim-Sam. Some sim-Sam I am.
-            p
+            //- p
               a.profile-link(href='/user/sam-smith/') Read more...
           li.span2.center
             .item
               img.img-circle(src='/static/images/residents/laura.jpg', alt='Laura Scher')
-              .about-overlay.img-circle
+              //- .about-overlay.img-circle
                 a.profile-link(href='/user/laura-scher/') View Profile
             h5
               | Laura Scher
               br
             p.smallFontBy08 Hi, I'm Laura! Lore-uh. Low-ruh. Laura!
-            p
+            //- p
               a.profile-link(href='/user/laura-scher/') Read more...
