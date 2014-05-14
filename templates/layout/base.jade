@@ -5,6 +5,7 @@ html
 			block title
 				| CSE
 		link(rel="stylesheet", href="/static/build/main.css")
+		link(rel="shortcut icon", href="{{ url_for('static', filename='images/favicon.ico') }}")
 	body
 		block navbar
 			nav#navbar: .container

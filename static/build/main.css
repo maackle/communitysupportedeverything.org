@@ -634,7 +634,7 @@
 }
 .page-contact form input[type='email'],
 .page-contact form input[type='text'] {
-  background-color: #CCCCCC;
+  background-color: #FFF;
   color: #666666;
   font-size: 0.8em;
 }
@@ -643,7 +643,7 @@
   background-color: #fff;
 }
 .page-contact form textarea {
-  background-color: #CCCCCC;
+  background-color: #FFF;
   color: #666666;
   font-size: 0.8em;
 }
@@ -658,6 +658,9 @@
 }
 .page-contact form .media {
   padding-top: 24px;
+}
+.page-contact h5 {
+  text-transform: none;
 }
 /**   PAGE | CLIENTS*/
 .page-clients .row-fluid {
