@@ -10,18 +10,19 @@
               button.btn.btn-primary.sicon-search.sicon-white(type='button')
                 i Search
       article
-        ul.thumbnails.plugin-filter-elements.portfolio-items
-          for project in projects
-            li.span3.mix
-              a(href='#'+url_for('project.overview', project_slug=project.slug), data-destination='portfolio-items', data-insert='before')
-                if project.image
-                  img(src=url_for('project.image', project_slug=project.slug), alt='Community Supported Everything')
-                else
-                  img(src='/static/images/project-empty-400x266.png', alt='Community Supported Everything')
-                .portfolio-overlay
-              h5.center= project.name
-              if project.excerpt
-                p.project-description= project.excerpt
+        .row-fluid
+          ul.thumbnails.plugin-filter-elements.portfolio-items
+            for project in projects
+              li.span3
+                a(href='#'+url_for('project.overview', project_slug=project.slug), data-destination='portfolio-items', data-insert='before')
+                  if project.image
+                    img(src=url_for('project.image', project_slug=project.slug), alt='Community Supported Everything')
+                  else
+                    img(src='/static/images/project-empty-400x266.png', alt='Community Supported Everything')
+                  .portfolio-overlay
+                h5.center= project.name
+                if project.excerpt
+                  p.project-description= project.excerpt
           //-
             li.span4.mix.illustration.branding
               a(href='#/static/theme-pages/portfolio/project_1.html', data-destination='portfolio-items', data-insert='before')
