@@ -3,52 +3,60 @@
     header
       h4.line-divider Who We Are
       h1 Residents
-      .row
+    article
+      .row-fluid
         .span8.offset2
           p
             | We are in our pilot year, and we currently have 5 residents, all working on a different community project of their own design.
-    article
-      .thumbnails.about-items
-        .row-fluid
-          ul.thumbnails.about-items
-            li.span1
-            for user in residents
-              li.span2.center
-                .item
-                  if user.profile.image
-                    img.img-circle(src=url_for('user.image', user_slug=user.slug), alt=user.profile.full_name)
-                  else 
-                    img.img-circle(src='/static/images/project-empty.png', alt=user.profile.full_name)
-                  //- .about-overlay.img-circle
-                    a.profile-link(href=url_for('user.profile', user_slug=user.slug)) View Profile
-                h5= user.profile.full_name
-                  br
-                p.smallFontBy08= user.profile.short_bio
-                //- p
-                  a.profile-link(href=url_for('user.profile', user_slug=user.slug)) Read more...
-    article
-      h1.center Directors
       br
+      br 
       .row-fluid
         ul.thumbnails.about-items
-          li.span2.offset3.center
+          li.span1
+          for user in residents
+            li.span2.center
+              .item
+                if user.profile.image
+                  img.img-circle(src=url_for('user.image', user_slug=user.slug), alt=user.profile.full_name)
+                else 
+                  img.img-circle(src='/static/images/project-empty.png', alt=user.profile.full_name)
+                //- .about-overlay.img-circle
+                  a.profile-link(href=url_for('user.profile', user_slug=user.slug)) View Profile
+              h5
+                = user.profile.full_name.split(' ')[0]
+                br
+                = user.profile.full_name.split(' ')[1]
+                br
+              p.smallFontBy08= user.profile.short_bio
+              //- p
+                a.profile-link(href=url_for('user.profile', user_slug=user.slug)) Read more...
+    br
+    h1.center Directors
+    article
+      .row-fluid
+        ul.thumbnails.about-items
+          li.span2.offset4.center
             .item
               img.img-circle(src='/static/images/residents/sam.jpg', alt='Sam Smith')
               //- .about-overlay.img-circle
                 a.profile-link(href='/user/sam-smith/') View Profile
             h5
-              | Sam Smith
+              | Sam 
+              br
+              | Smith
               br
             //-p.smallFontBy08 I'm a simulated Sam... a sim-Sam. Some sim-Sam I am.
             //- p
               a.profile-link(href='/user/sam-smith/') Read more...
-          li.span2.offset1.center
+          li.span2.center
             .item
               img.img-circle(src='/static/images/residents/laura.jpg', alt='Laura Scher')
               //- .about-overlay.img-circle
                 a.profile-link(href='/user/laura-scher/') View Profile
             h5
-              | Laura Scher
+              | Laura 
+              br
+              | Scher
               br
             //-p.smallFontBy08 Hi, I'm Laura! Lore-uh. Low-ruh. Laura!
             //- p
