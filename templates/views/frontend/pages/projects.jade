@@ -10,8 +10,8 @@
               button.btn.btn-primary.sicon-search.sicon-white(type='button')
                 i Search
       article
-        ul.thumbnails.plugin-filter-elements.portfolio-items
-          .row
+        .row
+          ul.thumbnails.plugin-filter-elements.portfolio-items
             for project in projects
               li.span3
                 a(href='#'+url_for('project.overview', project_slug=project.slug), data-destination='portfolio-items', data-insert='before')
