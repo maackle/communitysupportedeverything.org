@@ -10,6 +10,13 @@ section.portfolio-item-details
             span ✖
             .clearfix
           h5= project.name
+          for resident in residents
+            if project in resident.profile.projects
+              = resident
+            else
+              | Community Supported Everything
+
+              
           article.smallFontBy08
             p= project.content
           //- section.website
