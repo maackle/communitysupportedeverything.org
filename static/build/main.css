@@ -175,6 +175,9 @@
   font-weight: bold;
   position: absolute;
 }
+.portfolio-items li {
+  min-height: 430px;
+}
 .portfolio-items .mix {
   opacity: 0;
   display: none;
@@ -323,9 +326,17 @@
 }
 @media (min-width: 1280px) {
   .node.open-source {
-    left: 40px;
+    left: 90px;
   }
   .node.praxis {
+    left: -90px;
+  }
+  .node.systems-thinking,
+  .node.edgework {
+    left: 40px;
+  }
+  .node.coaching,
+  .node.community-resilience {
     left: -40px;
   }
 }
