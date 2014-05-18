@@ -327,11 +327,11 @@
   opacity: 0;
   filter: alpha(opacity=0);
   margin-top: 20px;
-  padding: 2em;
+  padding: 6%;
   max-width: 300px;
   font-size: 16px !important;
   line-height: 22px !important;
-  width: 100%;
+  width: 86%;
   margin: 0 auto;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -363,7 +363,6 @@
     left: -40px;
   }
 }
-/* Mobile size */
 /*
 *   PAGE | ABOUT
 */
@@ -499,6 +498,11 @@
   width: 8px;
   margin-left: 5px;
   margin-right: 5px;
+}
+@media only screen and (max-device-width: 480px) {
+  .page-twitter {
+    display: none;
+  }
 }
 /*
 *   PAGE | BLOG
