@@ -299,18 +299,35 @@
   width: 142px;
   height: 142px;
 }
-.page-features .program-overview .node p {
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-  background-color: rgba(0, 0, 0, 0);
+.page-features .program-overview .node {
+  position: relative;
+  height: 220px;
 }
-.page-features .program-overview .node:hover p {
+.page-features .program-overview .node .description {
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  margin-top: 20px;
+  padding: 2em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  max-width: 300px;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 1280px) {
+  .node.open-source {
+    left: 40px;
+  }
+  .node.praxis {
+    left: -40px;
+  }
 }
 /*
 *   PAGE | ABOUT
