@@ -114,9 +114,6 @@
   background: url(../images/css/paper_bg.png);
 }
 /**   PAGE | WORK*/
-.portfolio-items {
-  /*    * Filtering configuration    */
-}
 .portfolio-items a {
   position: relative;
   display: block;
@@ -176,7 +173,7 @@
   position: absolute;
 }
 .portfolio-items li {
-  min-height: 430px;
+  min-height: 440px;
 }
 .portfolio-items .mix {
   opacity: 0;
@@ -309,27 +306,53 @@
   position: relative;
   height: 220px;
 }
+.page-features .program-overview .node:hover .description {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: rotate(720);
+  -moz-transform: rotate(720);
+  -ms-transform: rotate(720);
+  -o-transform: rotate(720);
+  transform: rotate(720);
+}
+.page-features .program-overview .node:hover .node-ct {
+  height: 0;
+}
 .page-features .program-overview .node .description {
-  min-height: 5em;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: none;
-  margin-top: 20px;
-  padding: 2em;
   -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
   border-radius: 1em;
+  min-height: 5em;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  filter: alpha(opacity=0);
+  margin-top: 20px;
+  padding: 2em;
   max-width: 300px;
   font-size: 16px !important;
   line-height: 22px !important;
   width: 100%;
   margin: 0 auto;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
+.page-features .program-overview .node .node-ct {
+  overflow: hidden;
+  height: 215px;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+/* Desktop/tablet size */
 @media (min-width: 1280px) {
   .node.open-source {
-    left: 90px;
+    left: 110px;
   }
   .node.praxis {
-    left: -90px;
+    left: -110px;
   }
   .node.systems-thinking,
   .node.edgework {
@@ -340,6 +363,7 @@
     left: -40px;
   }
 }
+/* Mobile size */
 /*
 *   PAGE | ABOUT
 */
