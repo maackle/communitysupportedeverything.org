@@ -298,6 +298,9 @@
   margin-top: 100px;
   padding-top: 50px;
 }
+.page-features .program-overview {
+  padding-bottom: 3em;
+}
 .page-features .program-overview .icon {
   width: 142px;
   height: 142px;
@@ -307,10 +310,7 @@
   height: 220px;
 }
 .page-features .program-overview .node .description {
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
+  min-height: 5em;
   background-color: rgba(0, 0, 0, 0.6);
   display: none;
   margin-top: 20px;

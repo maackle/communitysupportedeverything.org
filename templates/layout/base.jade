@@ -44,11 +44,11 @@ html
 				
 				$(function(){
 					$('.node').hover(function(){
-						$(this).children().filter('.description').show()	
-						$(this).children().filter('img, h5').hide()
+						$(this).children().filter('.description').slideDown()	
+						$(this).children().filter('.node-ct').slideUp();
 					}, function(){
-						$(this).children().filter('.description').hide()	
-						$(this).children().filter('img, h5').show()
+						$(this).children().filter('.description').slideUp()	
+						$(this).children().filter('.node-ct').slideDown()
 					})
 				})
 			script(type='text/javascript')
