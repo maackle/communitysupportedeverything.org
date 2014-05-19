@@ -839,6 +839,11 @@
 #navigation .mobile-menu:hover .icon-bar {
   background-color: #4e808e;
 }
+@media only screen and (max-device-width: 480px) {
+  .brand {
+    display: none;
+  }
+}
 /**   FOOTER*/
 .pages footer {
   padding-top: 30px;
