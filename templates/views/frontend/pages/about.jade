@@ -19,10 +19,11 @@
             li.span2.center
               .item
                 if user.profile.image
+                  //- img.img-circle(src=url_for('user.image', user_slug=user.slug), alt=user.profile.full_name)
                   img.img-circle(src=url_for('user.image', user_slug=user.slug), alt=user.profile.full_name)
                 else 
                   img.img-circle(src='/static/images/project-empty.png', alt=user.profile.full_name)
-                //- .about-overlay.img-circle
+                .about-overlay.img-circle
                   a.profile-link(href=url_for('user.profile', user_slug=user.slug)) View Profile
               h5
                 = user.profile.full_name.split(' ')[0]

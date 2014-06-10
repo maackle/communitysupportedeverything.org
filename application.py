@@ -77,11 +77,11 @@ def setup_routes(app):
 	def logout():
 		return redirect(url_for('auth.logout'))
 
-	@app.route('/images/<image_id>/')
-	def image(image_id):
-		print dir(db)
-		images = db.images.files
-		print(dir(images))
+	@app.route('/image/<model_name>/<object_id>/<image_field_name>/')
+	def image(model_name, object_id, image_field_name):
+		obj = getattr(db, 'users').objects(object_id)
+		print obj
+		return gridfs_response(user.profile.image)
 
 
 def setup_admin(app):

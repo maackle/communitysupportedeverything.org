@@ -1,9 +1,19 @@
 import re
 from unicodedata import normalize
 from flask import make_response, send_file
+from gridfs import GridFS
 from gridfs.errors import NoFile
+from bson.objectid import ObjectId
+
+from pymongo import MongoClient
 
 _punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+')
+
+
+def getFS(db):
+	if not FS:
+		FS = GridFS(db)
+	return FS
 
 def slugify(text, delim=u'-'):
     """Generates an slightly worse ASCII-only slug."""
@@ -22,6 +32,7 @@ def gridfs_response(file):
 		return res
 	except NoFile:
 		abort(404)
+
 
 def gridfs_response_raw(data, content_type):
 	try:

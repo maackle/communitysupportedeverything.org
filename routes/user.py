@@ -31,6 +31,11 @@ def profile(user, **kwargs):
 def image(user, **kwargs):
 	return gridfs_response(user.profile.image)
 
+@blueprint.route('/<user_slug>/profile/image/')
+@user_required
+def profile_image(user, **kwargs):
+	return gridfs_response(user.profile.background_image)
+
 
 @blueprint.route('/<user_slug>/edit/', methods=['GET', 'POST',])
 @owner_required

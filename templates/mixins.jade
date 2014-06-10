@@ -3,7 +3,7 @@ mixin formfield(field, placeholder="")
 		= field.label(class="control-label")
 		if field.type == 'FileField'
 			img(src=field)
-		|  
+		|	
 		!= field(class="form-control", placeholder=placeholder)
 		ul.errors
 			for error in field.errors
@@ -13,3 +13,45 @@ mixin formsubmit(value="Submit")
 	.form-group.form-submit
 		input.btn.btn-primary(type="submit", value=value)
 		
+mixin render_project_overview(project)
+	section.portfolio-item-details
+		.row-fluid
+			.span8
+				if project.image
+					img(src=url_for('project.image', project_slug=project.slug), alt='Community Supported Everything')
+				else
+					img(src='/static/images/project-empty-400x266.png', alt='Community Supported Everything', width=900)
+			.span4
+				.close-portfolio
+					span ✖
+					.clearfix
+				h5= project.name
+				for resident in residents
+					if project in resident.profile.projects
+						= resident
+					else
+						| Community Supported Everything
+
+						
+				//- article.smallFontBy08
+				//- 	p= project.content
+				//- section.website
+				//- 	h5 Visit site
+				//- 	a.smallFontBy08(href='#') www.webaddress.com
+				//- .social-icons.sicon-black.bordered.bordered-black
+				//- 	a.sicon-white.sicon-facebook(href='#')
+				//- 		i Facebook
+				//- 	a.sicon-white.sicon-twitter(href='#')
+				//- 		i Twitter
+				//- 	a.sicon-white.sicon-linkedin(href='#')
+				//- 		i LinkedIn
+				//- 	a.sicon-white.sicon-youtube(href='#')
+				//- 		i Youtube
+				//- 	a.sicon-white.sicon-pinterest(href='#')
+				//- 		i Pinterest
+				//- .submenu
+				//- 	ul
+				//- 		li
+				//- 			span illustration
+				//- 		li
+				//- 			span Brending

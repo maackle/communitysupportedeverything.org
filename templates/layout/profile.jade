@@ -8,12 +8,16 @@ html.csstransforms.csstransforms3d.csstransitions(lang='en')
     // Mobile View
     meta(name='viewport', content='width=device-width')
     title  Profile Theme
-    link(rel='Shortcut Icon', href='http://organicthemes.com/demo/profile/wp-content/themes/organic_profile/images/favicon.ico', type='image/x-icon')
+    link(rel='Shortcut Icon', href='', type='image/x-icon')
+    link(rel='stylesheet', type='text/css', href='/static/build/main.css')
     style(type='text/css', media='screen')
+      .container {
+        width: auto;
+      }
       #header {
       -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
       #header.home-header {
-      min-height: 520px;}
+      min-height: 280px;}
       #wrap .container, #wrap #homepage .featured-page .feature-img {
       background-color: #F4F4F4;}
       .container a, .container a:link, .container a:visited {
@@ -102,7 +106,8 @@ html.csstransforms.csstransforms3d.csstransitions(lang='en')
     style(type='text/css')
       .recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
     style(type='text/css')
-      #header { background-color: #F9F9F9; background-image: url('http://organicthemes.com/demo/profile/wp-content/themes/organic_profile/images/background.jpg'); background-repeat: no-repeat; background-position: top center; background-attachment: scroll; }
+      #header { background-color: #F9F9F9; background-repeat: no-repeat; background-position: top center; background-attachment: scroll; }
+    
     link(rel='alternate', type='application/rss+xml', title='Profile Theme Feed', href='http://organicthemes.com/demo/profile/feed/')
     link(rel='pingback', href='http://organicthemes.com/demo/profile/xmlrpc.php')
     // Social Buttons
@@ -218,6 +223,27 @@ html.csstransforms.csstransforms3d.csstransitions(lang='en')
       .fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
       .fb_connect_bar_container div,.fb_connect_bar_container span,.fb_connect_bar_container a,.fb_connect_bar_container img,.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}.fb_connect_bar a:hover{color:#fff}.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}.fb_connect_bar div a,.fb_connect_bar span,.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
       .fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}
+    
+    // CUSTOM STYLES
+    style(type="text/css")  #header { background-image: url('#{url_for('user.profile_image', user_slug=user.slug)}'); }
+    style(type="text/css")
+      .profile-page .resident-bio {
+        -webkit-column-count: 2; /* Chrome, Safari, Opera */
+          -moz-column-count: 2; /* Firefox */
+          column-count: 2;
+      }
+      .profile-projects {
+        background: white;
+        padding: 50px;
+      }
+      .profile-projects .image {
+        float: left;
+      }
+      .profile-projects .image img {
+        max-width: 400px;
+        max-height: 400px;
+      }
+
   body.home.blog.custom-background(style='', data-twttr-rendered='true')
     // BEGIN #wrap
     #wrap
@@ -225,7 +251,7 @@ html.csstransforms.csstransforms3d.csstransitions(lang='en')
       #header.home-header
         // BEGIN .row
         .row
-          #masthead
+          //- #masthead
             h1.site-title
               span
                 a(href='/static/theme-pages/profile/dude_files/dude.html', title='Profile Theme', rel='home') 
@@ -235,7 +261,7 @@ html.csstransforms.csstransforms3d.csstransitions(lang='en')
               block profile_tagline
                 | A Theme Designed Just For You
           // END .row
-        nav#navigation.navigation-main.home-nav(role='navigation')
+        //- nav#navigation.navigation-main.home-nav(role='navigation')
           h1.menu-toggle Menu
           .menu-main-menu-container
             ul#menu-main-menu.menu.sf-js-enabled.sf-arrows
